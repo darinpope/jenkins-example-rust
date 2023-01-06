@@ -13,6 +13,7 @@ pipeline {
     }
     stage('run manually') {
       steps {
+        sh 'pwd'
         dir('cargo') {
           sh './target/debug/hello_world'
         }
