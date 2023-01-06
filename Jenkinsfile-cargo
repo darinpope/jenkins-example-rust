@@ -13,7 +13,9 @@ pipeline {
     }
     stage('run manually') {
       steps {
-        sh './target/debug/hello_world'
+        dir('cargo') {
+          sh './target/debug/hello_world'
+        }
       }
     }
     stage('run with Cargo') {
